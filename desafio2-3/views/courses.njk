@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<title>Starter | Rocketseat</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+     <section class="cards">
+
+         {% for item in items %}
+            <div class="card" id="{{ item.id }}">
+
+                <div class="car_image_container">
+                    <img src="{{ item.img }}" alt="Imagem de {{ item.id }}">
+
+                    
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </section>
+
+    <script src="scripts.js"></script>
+{% endblock %}

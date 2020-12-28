@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <link rel="icon" href="/imagem/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles.css">
+
+
+    {% block  head %}
+         <title>Starter | Rocketseat</title>
+    {% endblock %}
+
+</head>
+    <body>
+        <header>
+            <div class="links">
+                <a target="_blank" href="https://discordapp.com/invite/gCRAFhc">Comunidade</a>
+                <a target="_blank" href="mailto:oi@rocketseat.com.br">Email</a>
+                <a target="_blank" href="tel:+5547992078767">Telefone</a>
+                <a href="/">Sobre</a>
+                <a href="/courses">Conteúdos</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

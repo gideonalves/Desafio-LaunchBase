@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{ course.title }}</title>
+
+{% endblock %}
+
+{% block content %}
+    <section class="paginas">
+
+        <div class="links_3">
+            <a href="/courses">Voltar</a>
+        </div>
+
+        <div class="img_course">
+            <h1>{{ course.title }}</h1>
+            <img src="{{ course.img }}" alt="Imagem de {{ course.id }}">
+            <h2>{{ course.duretion }}</h2>
+        </div>
+
+      
+
+    </section>
+{% endblock %}

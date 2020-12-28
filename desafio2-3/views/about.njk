@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Starter | Rocketseat</title>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <img src="{{ about.avatar_url }}" alt="logo">
+        <h1>{{ about.escola }}</h1>
+        <p>{{ about.description }}</p>
+        <p>{{ about.technology }}</p>
+    </div>
+
+    <div class="cursos">
+        <ul style="display: flex; justify-content: center;">
+
+            {% for linguagen in about.linguagens %}
+                <li style="margin: 0px 10px;">
+                    <h3>{{ linguagen.curso }}</h3>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div id="links-footer" class="links">
+        {% for link in about.links %}
+            <a href="{{ link.url }}" target="_blank">{{link.name}}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
