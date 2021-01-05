@@ -1,0 +1,34 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "http://localhost:3000/instructors/register",
+      "name": "gideon alves moreira",
+      "birth": 348883200000,
+      "gender": "P",
+      "services": "matematica",
+      "created_at": 1609200481617,
+      "select": "EMC"
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://localhost:3000/instructors/register",
+      "name": "tatiana",
+      "birth": 498096000000,
+      "gender": "P",
+      "services": "portugues",
+      "created_at": 1609200629602,
+      "select": "EMC"
+    },
+    {
+      "id": 3,
+      "avatar_url": "http://localhost:3000/instructors/register",
+      "name": "isabela",
+      "birth": 1168819200000,
+      "gender": "P",
+      "services": "ingles",
+      "created_at": 1609200700881,
+      "select": "EMC"
+    }
+  ]
+}
