@@ -6,7 +6,7 @@
       "name": "gideon alves moreira",
       "birth": 348883200000,
       "gender": "P",
-      "services": "matematica",
+      "education_level": "matematica",
       "created_at": 1609200481617,
       "select": "EMC"
     },
@@ -16,7 +16,7 @@
       "name": "tatiana",
       "birth": 498096000000,
       "gender": "P",
-      "services": "portugues",
+      "education_level": "portugues",
       "created_at": 1609200629602,
       "select": "EMC"
     },
@@ -26,7 +26,7 @@
       "name": "isabela",
       "birth": 1168819200000,
       "gender": "P",
-      "services": "ingles",
+      "education_level": "ingles",
       "created_at": 1609200700881,
       "select": "EMC"
     }

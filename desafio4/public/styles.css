@@ -166,8 +166,7 @@ header {
 input {
     width: 100%;
     outline: none; /* tira a linha do input */
-    /* color: #777; */
-    color: rgb(245, 8, 8);
+    color: #777;
     font-weight: bold;
     font-size: 18px;   
 }

@@ -15,6 +15,8 @@ routes.get('/instructors', function(req, res) {
 routes.get('/instructors/register', function(req, res) {  
     return res.render("instructors/register")
 })
+// chama a pagina show
+routes.get('/instructors/:id', teacher.show)
 
 /* Rota do formulario */
 routes.post('/instructors', teacher.post)

@@ -1,6 +1,19 @@
 const fs = require('fs') /* fs  significa fire sisten */
 const data = require('./data.json') 
 
+
+// show
+exports.show = function(req, res) {
+    // req.params
+    const { id } = req.params
+    const foundInstructor = data.instructors.find(function(instructor) { // o "find" so receber se for verdadeiro ou falso
+           return instructor.id == id
+    })
+    if (!foundInstructor) return res.send("Professor não encontrado!")
+    return res.render("instructors/show", { instructor: foundInstructor })
+}
+
+
 // create
 exports.post = function(req, res) {  
     
@@ -14,7 +27,7 @@ exports.post = function(req, res) {
     
         }
 
-        let { avatar_url, birth, name, select, gender, services } = req.body
+        let { avatar_url, birth, name, select, gender, education_level } = req.body
 
 
         birth = Date.parse(birth)
@@ -28,7 +41,7 @@ exports.post = function(req, res) {
             name,
             birth,
             gender,
-            services,
+            education_level,
             created_at,
             select
         })
