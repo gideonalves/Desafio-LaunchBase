@@ -5,22 +5,26 @@ const teacher = require('./teacher')
 // Rotas
 routes.get('/', function(req, res) {  // 02
     // nessa rota oque muda é o "redirect"
-    return res.redirect("instructors") 
+    return res.redirect("teachers") 
 })
 
-routes.get('/instructors', function(req, res) {  
-    return res.render("instructors/teachers")
+// rota da index
+routes.get('/teachers', function(req, res) {  
+    return res.render("teachers/index")
 })
 
-routes.get('/instructors/register', function(req, res) {  
-    return res.render("instructors/register")
+// rota pagina create
+routes.get('/teachers/create', function(req, res) {  
+    return res.render("teachers/create")
 })
-// chama a pagina show
-routes.get('/instructors/:id', teacher.show)
 
-/* Rota do formulario */
-routes.post('/instructors', teacher.post)
+// rota id
+routes.get('/teachers/:id', teacher.show) 
 
+// rota pagina formulario POST
+routes.post("/teachers", teacher.post)
+
+// roda pagina students
 routes.get('/students', function(req, res) {  
     return res.send("students")
 })

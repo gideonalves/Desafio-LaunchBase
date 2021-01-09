@@ -104,13 +104,13 @@ header {
     padding: 32px;
 }
 
-.details .item { /* borda divide os itens */
+.details .item { /* borda que divide os itens */
     border-top: 1px solid  rgb(245, 75, 8);
     padding: 16px 0;
 }
 
-.details .item:last-child { /* ele pega o ultimo elemento */
-    border: none; /* tira ultima borda */
+.details.item:first-child { /* tira a primeira borda */
+    border: none;
 }
 
 .details h3
@@ -131,7 +131,7 @@ header {
 .details h3 { 
     text-transform: uppercase; /* deixa o texto com as letras maiuscula */
     font-weight: bold; 
-    color: var(--primary-color);     
+    color: var(--primary-color);    
 }
 
 .details .item span { 

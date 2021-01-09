@@ -5,12 +5,21 @@ const data = require('./data.json')
 // show
 exports.show = function(req, res) {
     // req.params
-    const { id } = req.params
-    const foundInstructor = data.instructors.find(function(instructor) { // o "find" so receber se for verdadeiro ou falso
-           return instructor.id == id
+   const { id } = req.params
+   const foundTeachers = data.teacher.find(function(teacher) { // o "find" so receber se for verdadeiro ou falso
+          return teacher.id == id
     })
-    if (!foundInstructor) return res.send("Professor não encontrado!")
-    return res.render("instructors/show", { instructor: foundInstructor })
+    if (!foundTeachers) return res.send("Professor não encontrado!")
+
+    const thacher = {
+        ...foundTeachers,
+        age: "",
+        gender: "",                                   //split em portugues "dividido"  
+        subjects_taught: foundTeachers.subjects_taught.split(","),
+        created_at: "",
+    }   
+            return res.render("teachers/show", { thacher })
+                    //teachers é a pasta ta pegando o arquivo show             
 }
 
 
@@ -27,26 +36,24 @@ exports.post = function(req, res) {
     
         }
 
-        let { avatar_url, birth, name, select, gender, education_level } = req.body
+        let { avatar_url, name, birth,  select, gender, education_level } = req.body
 
 
-        birth = Date.parse(birth)
-        const created_at = Date.now()
-        const id = Number(data.instructors.length +1) // esse comando cria um id no data.json
+           birth = Date.parse(birth)
+           const created_at = Date.now()
+           const id = Number(data.teacher.length + 1) // esse comando cria um id no data.json
 
 
-        data.instructors.push({
-            id,
-            avatar_url,
-            name,
-            birth,
-            gender,
-            education_level,
-            created_at,
-            select
+        data.teacher.push({
+             id,
+             avatar_url,
+             name,
+             birth,
+             gender,
+             education_level,
+             created_at,
+             select
         })
-
-
 
 
         // aqui ele pega todos os arquivos do formulario e guarda dentro do data.json
@@ -54,7 +61,7 @@ exports.post = function(req, res) {
         fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
             if (err) return res.send("Write file error!") // se o arquivo foi escrito errado ele aparece essa mensagem de erro
 
-            return res.redirect("/instructors")
+            return res.redirect("/teachers")
         })
 
     // return res.send(req.body)
