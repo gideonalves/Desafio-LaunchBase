@@ -1,9 +1,9 @@
 {
   "teacher": [
     {
-      "id": 1,
+      "id": "1",
       "avatar_url": "http://localhost:3000/teachers/create",
-      "name": "Sara",
+      "name": "Sara Alcantara",
       "birth": 947894400000,
       "class_type": "P",
       "education_level": "EM",

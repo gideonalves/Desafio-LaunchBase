@@ -28,7 +28,7 @@
 
             <div class="item">
                 <div>Tipo de aula</div>
-                     <span>{{ teacher.value }}</span>
+                     <span>{{ "Presencial" if teacher.class_type == "P" else "Á distância" }}</span>
                  </div>
 
             <div class="item">
@@ -42,8 +42,10 @@
 
             <div class="item">
                 <div>Desde</div>
-                <div>{{ teacher.created_at }}</div>
+                 <div>{{teacher.created_at}}</div>
             </div>
+
+            <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
 
         </section>
     </div>
