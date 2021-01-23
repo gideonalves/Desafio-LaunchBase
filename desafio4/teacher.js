@@ -3,10 +3,14 @@ const data = require('./data.json')
 const { age, graduation, date } = require('./utils')
 const Intl = require('intl')
 
+exports.index = function(req, res) {  // aqui pega a rota da pagina index (01)
+    return res.render("teachers/index", { teacher: data.teacher }) // { teacher: data } esse comando manda todas as informaçoes da pagina data.json para o index.njk
+}
+
+
 
 
 // ---------------------- SOHW -------------------------------------
-
 exports.show = function (req, res) {
     // req.params
 
@@ -26,9 +30,7 @@ exports.show = function (req, res) {
     //teachers é a pasta ta pegando o arquivo show             
 }
 
-
-// ---------------------- CREATE -------------------------------------
-
+// ---------------------- CREATE -----------------------------------
 exports.post = function (req, res) {
 
     const keys = Object.keys(req.body) /* Object.keys ele cria um arrey de objeto pega todos os campo do formulario */
@@ -43,11 +45,9 @@ exports.post = function (req, res) {
 
     let { avatar_url, name, birth, subjects_taught, class_type, education_level } = req.body
 
-
     birth = Date.parse(birth)
     const created_at = Date.now()
     const id = Number(data.teacher.length + 1) // esse comando cria um id no data.json
-
 
     data.teacher.push({
         id,
@@ -73,8 +73,6 @@ exports.post = function (req, res) {
 }
 
 // ---------------------- EDIT -------------------------------------
-
-
 exports.edit = function(req, res) {   
     // req.params
 
@@ -93,7 +91,6 @@ exports.edit = function(req, res) {
 }
 
 // ---------------------- put  -------------------------------------
-
 exports.put = function (req, res) {
     const { id } = req.body
     let index = 0
@@ -109,14 +106,31 @@ exports.put = function (req, res) {
     const teacher = {
         ...foundTeachers,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teacher[index] = teacher
 
-    fs.writeFile("data.jason", JSON.stringify(data, null, 2), function(err) {
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if(err) return res.send("Write erro!")
 
         return res.redirect(`/teachers/${id}`)
+    })
+}
+
+// ---------------------- Deletar  ---------------------------------
+exports.delete = function(req, res ) {
+    const { id } = req.body
+
+    const filteredTeacher = data.teacher.filter(function(teacher) {
+        return teacher.id != id
+    })
+    data.teacher = filteredTeacher
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("Write file error!") 
+
+        return res.redirect("/teachers")
     })
 }

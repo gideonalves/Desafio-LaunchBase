@@ -9,9 +9,7 @@ routes.get('/', function(req, res) {  // 02
 })
 
 // rota da index
-routes.get('/teachers', function(req, res) {  
-    return res.render("teachers/index")
-})
+routes.get('/teachers', teacher.index ) // mandando a função para a pagina "theacher.js" (01)
 
 // rota pagina create
 routes.get('/teachers/create', function(req, res) {  
@@ -29,6 +27,9 @@ routes.post("/teachers", teacher.post)
 
 // rota pagina formulario PUT
 routes.put("/teachers", teacher.put)
+
+// rota pagina formulario deletar
+routes.delete("/teachers", teacher.delete)
 
 
 // roda pagina students

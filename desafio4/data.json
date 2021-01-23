@@ -2,13 +2,43 @@
   "teacher": [
     {
       "id": 1,
-      "avatar_url": "http://localhost:3000/teachers/create",
-      "name": "Sara",
-      "birth": 947894400000,
+      "avatar_url": "https://scontent.fcgh32-1.fna.fbcdn.net/v/t1.0-1/p160x160/28468073_1652267591533341_6568265407122848285_n.jpg?_nc_cat=111&ccb=2&_nc_sid=dbb9e7&_nc_ohc=Xa61JhXtnd8AX_r75Xu&_nc_ht=scontent.fcgh32-1.fna&tp=6&oh=05893b194166fa6a26c0b271d08508af&oe=602FA117",
+      "name": "Gideon Alves moreira",
+      "birth": 364521600000,
       "class_type": "P",
       "education_level": "EM",
-      "created_at": 1610934636030,
-      "subjects_taught": "html, css"
+      "created_at": 1611100390604,
+      "subjects_taught": "HTML, CSS, Javascript"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://avatars.githubusercontent.com/u/28743243?s=460&u=578b52e8c2f608a40636bf83d69f2f6a3bd39deb&v=4",
+      "name": "Renato",
+      "birth": 1168819200000,
+      "class_type": "P",
+      "education_level": "EM",
+      "created_at": 1611359265034,
+      "subjects_taught": "Estudante, desenhista, musica"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/30644007?s=460&u=bf5e12ac9ff881fdceae133eef953a5947500cb3&v=4",
+      "name": "Alcenir nascimento de alcanta",
+      "birth": 497750400000,
+      "class_type": "D",
+      "education_level": "ES",
+      "created_at": 1611359311248,
+      "subjects_taught": "t.i, html, css"
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://localhost:3000/teachers/create",
+      "name": "didi",
+      "birth": 1609891200000,
+      "class_type": "D",
+      "education_level": "EM",
+      "created_at": 1611362577325,
+      "subjects_taught": "hhhh, jjjj"
     }
   ]
 }

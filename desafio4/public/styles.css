@@ -188,5 +188,67 @@ a.button {
 
 #form-delete button[type="submit"] {
     background-color: lightcoral;
+}
 
+/* INDEX TEACHER */
+.table-container {
+    display: block; /* tira o grid */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table { /* tira a configuração padrão da tabela*/
+    border-spacing: 0;
+}
+
+.table-container thead tr th,
+tbody tr td {
+    text-align: center;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid rgb(245, 75, 8);
+}
+
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none; /* tira a ultima borda */
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid wheat;
+}
+
+
+tbody tr td:last-child a {
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
 }
