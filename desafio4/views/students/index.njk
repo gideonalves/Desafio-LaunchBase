@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="card table-container">
-        <a href="/teachers/create">Cadastro</a>
+        <a href="/students/create">Cadastro</a>
         <table width="100%">
             <thead>{# cabeçalho #}
                 <tr>{# linha #}
@@ -13,13 +13,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for teachers in teacher %}
+                {% for students in student %}
                     <tr>
                        <td>
-                        <span style="background-image: url({{teachers.avatar_url}})"></span>
-                         {{ teachers.name }}</td>
+                        <span style="background-image: url({{students.avatar_url}})"></span>
+                         {{ students.name }}</td>
                         <td>{{ teachers.subjects_taught }}</td>
-                        <td><a href="/teachers/{{ teachers.id }}">ver</a></td>
+                        <td><a href="/students/{{ students.id }}">ver</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

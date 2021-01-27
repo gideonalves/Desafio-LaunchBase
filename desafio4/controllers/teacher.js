@@ -1,16 +1,13 @@
 const fs = require('fs') /* fs  significa fire sisten */
-const data = require('./data.json')
-const { age, graduation, date } = require('./utils')
+const data = require('../data.json')
+const { age, graduation, date } = require('../utils')
 const Intl = require('intl')
 
 exports.index = function(req, res) {  // aqui pega a rota da pagina index (01)
     return res.render("teachers/index", { teacher: data.teacher }) // { teacher: data } esse comando manda todas as informaçoes da pagina data.json para o index.njk
 }
 
-
-
-
-// ---------------------- SOHW -------------------------------------
+// ---------------------- SHOW -------------------------------------
 exports.show = function (req, res) {
     // req.params
 
@@ -28,6 +25,10 @@ exports.show = function (req, res) {
     }
     return res.render("teachers/show", { teacher })
     //teachers é a pasta ta pegando o arquivo show             
+}
+
+exports.create = function(req, res) {  
+    return res.render("teachers/create")
 }
 
 // ---------------------- CREATE -----------------------------------

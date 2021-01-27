@@ -1,4 +1,15 @@
 {
+  "student": [
+    {
+      "id": 1,
+      "avatar_url": "http://localhost:3000/students/create",
+      "name": "tatiana vieira moreira",
+      "birth": 498096000000,
+      "education_level": "3EM",
+      "created_at": 1611707730981,
+      "subjects_taught": "matematica, portugues"
+    }
+  ],
   "teacher": [
     {
       "id": 1,
@@ -33,12 +44,12 @@
     {
       "id": 4,
       "avatar_url": "http://localhost:3000/teachers/create",
-      "name": "didi",
-      "birth": 1609891200000,
+      "name": "gideon alcantara",
+      "birth": 1611878400000,
       "class_type": "D",
       "education_level": "EM",
-      "created_at": 1611362577325,
-      "subjects_taught": "hhhh, jjjj"
+      "created_at": 1611703459137,
+      "subjects_taught": "ddd"
     }
   ]
 }
